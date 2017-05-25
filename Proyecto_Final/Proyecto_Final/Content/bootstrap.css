@@ -183,6 +183,8 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+    color: #FF6600;
+    font-weight: 700;
 }
 
 button[disabled],

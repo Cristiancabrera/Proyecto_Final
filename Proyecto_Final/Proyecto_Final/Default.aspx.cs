@@ -59,7 +59,7 @@ namespace Proyecto_Final
                     propiedadestemp.CodigoPropiedad = leer2.ReadLine();
                     propiedadestemp.Codigopropietario = leer2.ReadLine();
                     propiedadestemp.Tipo = leer2.ReadLine();
-                    propiedadestemp.Metroscuadrados = Convert.ToInt16(leer2.ReadLine());
+                    propiedadestemp.Metroscuadrados = leer2.ReadLine();
                     listpropiedades.Add(propiedadestemp);
                 }
                 leer2.Close();
@@ -99,7 +99,88 @@ namespace Proyecto_Final
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            bool A = true;
+            bool B = false;
+            bool C = false;
+            bool D = false;
+            bool E = false;
 
+
+            Page_Load(A, B, C, D, E);
+
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            GridView1.DataSource = listcomunidad;
+            GridView1.DataBind();
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            bool A = false;
+            bool B = true;
+            bool C = false;
+            bool D = false;
+            bool E = false;
+
+
+            Page_Load(A, B, C, D, E);
+
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            GridView1.DataSource = listgastos;
+            GridView1.DataBind();
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            bool A = false;
+            bool B = false;
+            bool C = true;
+            bool D = false;
+            bool E = false;
+
+
+            Page_Load(A, B, C, D, E);
+
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            GridView1.DataSource = listpropiedades;
+            GridView1.DataBind();
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            bool A = false;
+            bool B = false;
+            bool C = false;
+            bool D = true;
+            bool E = false;
+
+
+            Page_Load(A, B, C, D, E);
+
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            GridView1.DataSource = listdatosPropie;
+            GridView1.DataBind();
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            bool A = false;
+            bool B = false;
+            bool C = false;
+            bool D = false;
+            bool E = true;
+
+
+            Page_Load(A, B, C, D, E);
+
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            GridView1.DataSource = listpagos;
+            GridView1.DataBind();
         }
     }
 }
