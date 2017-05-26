@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Reflection;
 
 namespace Proyecto_Final
 {
@@ -15,6 +16,10 @@ namespace Proyecto_Final
         List<gastos> listgastos = new List<gastos>();
         List<Pagos> listpagos = new List<Pagos>();
         List<propiedades> listpropiedades = new List<propiedades>();
+        List<piso> listpiso = new List<piso>();
+        List<Garaje> listgaraje = new List<Garaje>();
+        List<LocalComercial> listlocal = new List<LocalComercial>();
+
  
         protected void Page_Load(bool A, bool B, bool C, bool D, bool E)
         {
@@ -55,12 +60,31 @@ namespace Proyecto_Final
                 StreamReader leer2 = new StreamReader(stream2);
                 while (leer2.Peek() > -1)
                 {
-                    propiedades propiedadestemp = new propiedades();
-                    propiedadestemp.CodigoPropiedad = leer2.ReadLine();
-                    propiedadestemp.Codigopropietario = leer2.ReadLine();
-                    propiedadestemp.Tipo = leer2.ReadLine();
-                    propiedadestemp.Metroscuadrados = leer2.ReadLine();
-                    listpropiedades.Add(propiedadestemp);
+                    if (leer2.ReadLine() == "L")
+                    {
+                        LocalComercial localtemp = new LocalComercial();
+                        localtemp.Tipo = leer2.ReadLine();
+                        localtemp.Codigopropietario = leer2.ReadLine();
+                        localtemp.CodigoPropiedad = leer2.ReadLine();
+                        localtemp.Metroscuadrados = leer2.ReadLine();
+                        localtemp.Actividad = leer2.ReadLine();
+                        localtemp.NombreComercial = leer2.ReadLine();
+
+                    }
+                    if (leer2.ReadLine() == "G")
+                    {
+                        Garaje garajetemp = new Garaje();
+                        garajetemp.Abierta_cerrada = leer2.ReadLine();
+                        garajetemp.Abierta_cerrada = leer2.ReadLine();
+                    }
+                    if (leer2.ReadLine() == "P")
+                    {
+                        piso pisotemp = new piso();
+                        pisotemp.Vhvn = leer2.ReadLine();
+                        pisotemp.NumHabitaciones = Convert.ToInt16(leer2.ReadLine());
+                    }
+                     
+
                 }
                 leer2.Close();
             }
