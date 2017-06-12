@@ -69,11 +69,11 @@ namespace Proyecto_Final
                         localtemp.Metroscuadrados = leer2.ReadLine();
                         localtemp.Actividad = leer2.ReadLine();
                         localtemp.NombreComercial = leer2.ReadLine();
-
+                        
                     }
                     if (leer2.ReadLine() == "G")
                     {
-                        Garaje garajetemp = new Garaje();
+                        Garaje garajetemp = new Garaje();  
                         garajetemp.Abierta_cerrada = leer2.ReadLine();
                         garajetemp.Abierta_cerrada = leer2.ReadLine();
                     }
@@ -205,6 +205,11 @@ namespace Proyecto_Final
             GridView1.DataBind();
             GridView1.DataSource = listpagos;
             GridView1.DataBind();
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
